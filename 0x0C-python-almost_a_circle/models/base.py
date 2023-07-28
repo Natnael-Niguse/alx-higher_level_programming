@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """This module contains ths base class"""
 import json
+import csv
+import turtle
 
 
 class Base:
@@ -101,3 +103,33 @@ class Base:
     def from_csv_row(cls, row):
         """Creates an instance from a CSV row"""
         raise NotImplementedError("must be implemented in subclasses")
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles and Squares"""
+        screen = turtle.Screen()
+        screen.title("Draw Rectangles and Squares")
+        screen.setup(width=800, height=600)
+        screen.bgcolor("white")
+
+        # Draw the rectangles
+        for rectangle in list_rectangles:
+            turtle.penup()
+            turtle.goto(rectangle.x, rectangle.y)
+            turtle.pendown()
+            for _ in range(2):
+                turtle.forward(rectangle.width)
+                turtle.left(90)
+                turtle.forward(rectangle.height)
+                turtle.left(90)
+
+        # Draw the squares
+        for square in list_squares:
+            turtle.penup()
+            turtle.goto(square.x, square.y)
+            turtle.pendown()
+            for _ in range(4):
+                turtle.forward(square.width)
+                turtle.left(90)
+
+        turtle.done()
