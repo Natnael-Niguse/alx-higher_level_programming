@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This module contains ths base class"""
+import json
 
 
 class Base:
