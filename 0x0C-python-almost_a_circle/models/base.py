@@ -94,10 +94,10 @@ class Base:
             return []
 
     def to_csv_row(self):
-        """Returns a CSV row representation of the instance"""
-        raise NotImplementedError("to_csv_row method must be implemented in subclasses")
+        """Returns a CSV row"""
+        raise NotImplementedError("must be implemented in subclasses")
 
     @classmethod
     def from_csv_row(cls, row):
         """Creates an instance from a CSV row"""
-        raise NotImplementedError("from_csv_row method must be implemented in subclasses")
+        raise NotImplementedError("must be implemented in subclasses")
