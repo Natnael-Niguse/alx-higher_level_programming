@@ -90,20 +90,36 @@ class Rectangle(Base):
                f"{self.__x}/{self.__y} - " \
                f"{self.__width}/{self.__height}"
 
-    def update(self, *args):
-        """Update the attributes using no-keyword arguments"""
+    def update(self, *args, **kwargs):
+        """Update the attributes using both no-keyword and key-worded arguments"""
 
-        if len(args) >= 1:
-            self.id = args[0]
+        if args:
+            # If *args is not empty, update attributes using positional arguments
+            if len(args) >= 1:
+                self.id = args[0]
 
-        if len(args) >= 2:
-            self.__width = args[1]
+            if len(args) >= 2:
+                self.width = args[1]
 
-        if len(args) >= 3:
-            self.__height = args[2]
+            if len(args) >= 3:
+                self.height = args[2]
 
-        if len(args) >= 4:
-            self.__x = args[3]
+            if len(args) >= 4:
+                self.x = args[3]
 
-        if len(args) >= 5:
-            self.__y = args[4]
+            if len(args) >= 5:
+                self.y = args[4]
+        else:
+            # If *args is empty, update attributes using key-worded arguments (kwargs)
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'width':
+                    self.width = value
+                elif key == 'height':
+                    self.height = value
+                elif key == 'x':
+                    self.x = value
+                elif key == 'y':
+                    self.y = value
+
