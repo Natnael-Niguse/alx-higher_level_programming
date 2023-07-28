@@ -27,7 +27,7 @@ class Square(Rectangle):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     def update(self, *args, **kwargs):
-        """Update the attributes using both no-keyword and key-worded arguments"""
+        """Update the attributes arguments"""
 
         if args:
             # If *args is not empty
