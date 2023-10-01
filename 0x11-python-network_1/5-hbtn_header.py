@@ -14,5 +14,5 @@ if __name__ == "__main__":
     try:
         r_id = r.headers['X-Request-Id']
         print(r_id)
-    except:
+    except KeyError:
         pass

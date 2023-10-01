@@ -5,7 +5,6 @@ takes in a letter and sends a POST request to
 import requests
 from sys import argv
 
-
 if __name__ == "__main__":
     """
     takes in a letter and sends a POST request to
@@ -22,5 +21,5 @@ if __name__ == "__main__":
             print("No result")
         else:
             print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
-    except:
+    except ValueError:
         print("Not a valid JSON")
