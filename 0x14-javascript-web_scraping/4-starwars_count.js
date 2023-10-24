@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//SW movie id
+// SW movie id
 const request = require('request');
 const find = '/18/';
 request(process.argv[2], function (error, response, body) {

@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//userId
+// userId
 const request = require('request');
 request(process.argv[2], (error, response, body) => {
   !error && console.log(JSON.parse(body).reduce(function (all, curr) {
